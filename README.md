@@ -1,4 +1,4 @@
-# JHEX — Simple Mock Interview Proxy (Voice-enabled)
+# Mock Interview preparation Proxy (Voice-enabled)
 
 This repository implements a minimal interview/mock-interviewer web app.
 
