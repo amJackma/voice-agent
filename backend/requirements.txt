@@ -1,0 +1,8 @@
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+requests==2.31.0
+python-multipart==0.0.6
+pyjwt==2.8.0
+openai-whisper
+pydantic==1.10.11
+PyPDF2

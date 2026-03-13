@@ -1,0 +1,80 @@
+Build a simple interview proxy / mock interviewer web application with voice support.
+
+Constraints:
+- Keep the project SIMPLE and easy to debug
+- Do NOT use any database
+- Use in-memory session storage only
+- Use minimal files with clear responsibility
+- JD is OPTIONAL
+- Resume is REQUIRED
+- Focus on clarity over optimization
+
+Tech Stack:
+Frontend:
+- React (Vite)
+- Two pages only
+
+Backend:
+- Python FastAPI
+- LiveKit for real-time voice
+- Ollama (local LLM)
+- Whisper (local STT)
+- Browser TTS initially (no cloud dependency)
+
+Application Flow:
+
+PAGE 1 – Setup Page
+- Ask for:
+  - Name (text)
+  - Designation (text)
+  - Resume upload (PDF)
+  - Optional Job Description upload (PDF)
+- Show 4 selectable options:
+  1. Mock Interview
+  2. Resume Understanding Session
+  3. Job Description Understanding Session
+  4. Project Explanation (domain based)
+- After all required fields are filled, enable "Start Voice Session" button
+- On click, send data to backend and navigate to Page 2
+
+PAGE 2 – Interview Page
+- Automatically play and display this message:
+  "Welcome to JHEX, for your interview preparation. Let's begin."
+- Show:
+  - Agent messages (text)
+  - User live transcript (text)
+  - Start Mic button
+  - Stop Mic button
+- Interview runs for 20 minutes
+- Questions should mostly depend on JD if provided, otherwise on resume and role
+- Questions should increase in depth based on experience
+- Ask pipeline / system / decision-making questions
+
+End of Interview:
+- Generate a final score out of 100
+- Show:
+  - Final Score
+  - Strengths (3 bullets)
+  - Weak Areas (2 bullets)
+  - Hiring Recommendation (Yes / Maybe / No)
+- Read the result aloud
+
+Prompt Logic Rules:
+- If JD exists → JD drives questions
+- If JD does not exist → Resume + role standards drive questions
+- Ask one question at a time
+- Ask follow-up questions if answers are shallow
+- No textbook explanations
+- Keep interviewer tone realistic and professional
+
+File Rules:
+- Each file should do ONE thing only
+- Avoid unnecessary abstraction
+- Code must be readable and debuggable
+
+Generate:
+- Project folder structure
+- Backend files with comments
+- Frontend React pages
+- Ollama prompt templates
+- Clear explanation of how data flows between files
